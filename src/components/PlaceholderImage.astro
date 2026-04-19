@@ -1,0 +1,24 @@
+---
+interface Props {
+  description: string
+  aspectRatio?: string
+}
+
+const { description, aspectRatio = '16/9' } = Astro.props
+---
+
+<div
+  class="relative flex w-full items-center justify-center overflow-hidden bg-cream-deep"
+  style={`aspect-ratio: ${aspectRatio};`}
+>
+  <div class="m-4 flex h-[calc(100%-2rem)] w-[calc(100%-2rem)] items-center justify-center rounded-lg border-2 border-dashed border-forest-300 bg-white/60 p-6 text-center">
+    <div>
+      <div class="text-[10px] font-semibold uppercase tracking-[0.22em] text-forest-500">
+        Placeholder
+      </div>
+      <p class="mt-2 max-w-sm text-[14px] leading-snug text-forest-900">
+        Screenshot: <span class="font-semibold">{description}</span>
+      </p>
+    </div>
+  </div>
+</div>

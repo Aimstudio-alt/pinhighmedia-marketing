@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import FlagshipCard from '../components/FlagshipCard.astro'
+import PlaceholderImage from '../components/PlaceholderImage.astro'
 
 const title = 'Pin High Media — Software for UK golf clubs and county unions'
 const description =
-  'A specialist software studio building purpose-built tools for UK golf clubs, county unions, and tour organisers. Makers of CountyConsent and ClubSentinel.'
+  "We build modern, modular tools for UK golf clubs and county unions — purpose-built websites, member-facing booking, and bespoke admin tools that add what bundled legacy systems do badly."
 ---
 
 <Layout title={title} description={description}>
-  <!-- Hero -->
+
+  <!-- ── Hero (cream) ── -->
   <section class="relative overflow-hidden">
     <div class="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:px-8 md:pt-24 md:pb-28">
       <div class="grid items-center gap-12 md:grid-cols-12">
@@ -22,14 +24,14 @@ const description =
             <span class="text-forest-500"> actually works.</span>
           </h1>
           <p class="mt-6 max-w-2xl text-[17px] leading-relaxed text-ink-muted sm:text-lg">
-            We're a specialist studio building tools for golf clubs and county unions — not generic software reshaped for golf, but purpose-built platforms designed around the real operational challenges of running a modern club.
+            We build modern, modular tools for UK golf clubs and county unions — designed to add what bundled legacy systems do badly: purpose-built websites, member-facing booking, and bespoke admin tools. Keep what works. Replace what doesn't.
           </p>
           <div class="mt-10 flex flex-wrap items-center gap-3">
             <a
               href="/products"
               class="group inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-5 py-3 text-[15px] font-semibold text-cream transition-colors hover:bg-forest-900"
             >
-              Explore our products
+              See what we build
               <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
             </a>
             <a
@@ -41,10 +43,10 @@ const description =
           </div>
         </div>
 
-        <!-- Product screenshot -->
+        <!-- Hero product screenshot -->
         <div class="md:col-span-5">
           <div class="relative">
-            <div class="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-forest-100 to-brass/20 blur-2xl opacity-60" aria-hidden="true"></div>
+            <div class="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-forest-100 to-brass/20 opacity-60 blur-2xl" aria-hidden="true"></div>
             <div class="overflow-hidden rounded-xl bg-white ring-1 ring-forest-900/10 shadow-[0_30px_60px_-20px_rgba(14,31,16,0.3)]">
               <img
                 src="/preview-countyconsent.png"
@@ -63,18 +65,15 @@ const description =
     </div>
   </section>
 
-  <!-- Flagship products (dark band) -->
+  <!-- ── Flagship SaaS products (dark) ── -->
   <section class="bg-forest-900">
     <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
       <div class="max-w-2xl">
-        <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-brass-light">
-          Flagship products
-        </span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-cream sm:text-4xl">
-          Two SaaS platforms, live and in use.
+        <h2 class="text-3xl font-bold tracking-tight text-cream sm:text-4xl">
+          Flagship SaaS products
         </h2>
         <p class="mt-4 text-[16px] leading-relaxed text-forest-100/70">
-          Each one built to solve a specific, persistent problem — not a generic tool retrofitted to look like it fits.
+          Two products, live with real UK customers.
         </p>
       </div>
 
@@ -101,47 +100,126 @@ const description =
     </div>
   </section>
 
-  <!-- We also build (cream) -->
+  <!-- ── Standalone Tools (cream) ── -->
   <section>
     <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
-      <div class="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-        <div>
-          <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-forest-500">
-            Specialist tools
-          </span>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-forest-900 sm:text-4xl">
-            We also build focused tools for golf clubs and counties.
-          </h2>
-        </div>
-        <div>
-          <p class="text-[16px] leading-relaxed text-ink-muted">
-            League trackers, courtesy systems, integrated websites, F&amp;B booking, newsletter platforms, and more — purpose-built for the specific operational challenges of running a modern golf club.
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-forest-900 sm:text-4xl">
+          Tools built for specific jobs
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink-muted">
+          Focused products that solve one thing properly.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
+          <div class="flex items-center gap-2 text-forest-500">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
+            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
+          </div>
+          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
+            Golf League Tracker
+          </h3>
+          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
+            A full league management tool for club winter and summer leagues. Player selection, weekly group draws, live standings, and automatic WHS handicap maths — so captains don't have to.
           </p>
-          <a
-            href="/products"
-            class="group mt-6 inline-flex items-center gap-1.5 text-[15px] font-semibold text-forest-700 transition-colors hover:text-forest-900"
-          >
-            See everything we build
-            <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </a>
-        </div>
+        </article>
+
+        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
+          <div class="flex items-center gap-2 text-forest-500">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
+            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
+          </div>
+          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
+            County Golf Courtesy System
+          </h3>
+          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
+            Automates inter-club courtesy arrangements at county level. Saved Durham County Golf Union hundreds of hours of administration.
+          </p>
+        </article>
+
+        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
+          <div class="flex items-center gap-2 text-forest-500">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
+            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
+          </div>
+          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
+            County Golf Marketing Survey
+          </h3>
+          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
+            Data collection and insight tools for county golf bodies. Run surveys, track participation, get the data you need to make informed decisions.
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="/products"
+          class="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-forest-700 transition-colors hover:text-forest-900"
+        >
+          See the full breakdown on our products page
+          <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Closing CTA (dark band) -->
+  <!-- ── Case studies teaser (dark) ── -->
   <section class="bg-forest-900">
+    <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-cream sm:text-4xl">
+          When a club needs everything working together
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-forest-100/70">
+          We also build full bespoke platforms combining our modules into one integrated system for a single club or county. Two examples currently live:
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <a
+          href="/work/wearside"
+          class="group block overflow-hidden rounded-2xl bg-cream ring-1 ring-forest-700/40 transition-all duration-200 hover:-translate-y-1 hover:ring-brass"
+        >
+          <PlaceholderImage description="Wearside Golf Club homepage" />
+          <div class="flex items-center justify-between p-6 sm:p-7">
+            <span class="text-xl font-bold tracking-tight text-forest-900">
+              Wearside Golf Club
+            </span>
+            <span aria-hidden="true" class="text-forest-700 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+          </div>
+        </a>
+
+        <a
+          href="/work/dcgu"
+          class="group block overflow-hidden rounded-2xl bg-cream ring-1 ring-forest-700/40 transition-all duration-200 hover:-translate-y-1 hover:ring-brass"
+        >
+          <PlaceholderImage description="Durham County Golf Union homepage" />
+          <div class="flex items-center justify-between p-6 sm:p-7">
+            <span class="text-xl font-bold tracking-tight text-forest-900">
+              Durham County Golf Union
+            </span>
+            <span aria-hidden="true" class="text-forest-700 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Closing CTA (cream) ── -->
+  <section>
     <div class="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 md:py-28">
-      <h2 class="text-3xl font-bold tracking-tight text-cream sm:text-[40px]">
+      <h2 class="text-3xl font-bold tracking-tight text-forest-900 sm:text-[40px]">
         Software that understands golf.
       </h2>
-      <p class="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-forest-100/70">
+      <p class="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-ink-muted">
         Tell us what your club, county, or tour is wrestling with — we probably know the problem already.
       </p>
       <div class="mt-8">
         <a
           href="/contact"
-          class="group inline-flex items-center gap-1.5 rounded-lg bg-cream px-5 py-3 text-[15px] font-semibold text-forest-900 transition-colors hover:bg-white"
+          class="group inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-5 py-3 text-[15px] font-semibold text-cream transition-colors hover:bg-forest-900"
         >
           Get in touch
           <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -149,4 +227,5 @@ const description =
       </div>
     </div>
   </section>
+
 </Layout>
