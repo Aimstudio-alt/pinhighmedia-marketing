@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const title = 'Contact — Pin High Media'
+const description =
+  "Get in touch with Pin High Media — whether you're a club manager, a county secretary, or running a junior tour, we'd love to hear what you're wrestling with."
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section>
+    <div class="mx-auto max-w-4xl px-6 pt-16 pb-10 sm:px-8 md:pt-24 md:pb-14">
+      <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-forest-500">
+        Contact
+      </span>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-forest-900 sm:text-5xl md:text-[56px] md:leading-[1.08]">
+        Let's talk about what you're building.
+      </h1>
+      <p class="mt-6 max-w-2xl text-[17px] leading-relaxed text-ink-muted sm:text-lg">
+        Whether you're a club manager, a county secretary, or running a junior tour, we'd love to hear what you're wrestling with.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact options -->
+  <section>
+    <div class="mx-auto max-w-4xl px-6 pb-20 sm:px-8 md:pb-28">
+      <div class="grid gap-5 sm:grid-cols-2">
+        <a
+          href="mailto:hello@pinhighmedia.co.uk"
+          class="group rounded-2xl border border-forest-100 bg-white p-8 transition-all hover:border-forest-200 hover:shadow-[0_6px_30px_-10px_rgba(14,31,16,0.15)]"
+        >
+          <div class="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-500">
+            Email
+          </div>
+          <p class="mt-4 text-xl font-semibold tracking-tight text-forest-900">
+            hello@pinhighmedia.co.uk
+          </p>
+          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
+            The fastest way to reach us. We aim to reply within a working day.
+          </p>
+          <div class="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-forest-700 transition-colors group-hover:text-forest-900">
+            Send an email
+            <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+          </div>
+        </a>
+
+        {/* TODO: replace # with real LinkedIn URL */}
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-2xl border border-forest-100 bg-white p-8 transition-all hover:border-forest-200 hover:shadow-[0_6px_30px_-10px_rgba(14,31,16,0.15)]"
+        >
+          <div class="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-500">
+            LinkedIn
+          </div>
+          <p class="mt-4 text-xl font-semibold tracking-tight text-forest-900">
+            Connect with Kev
+          </p>
+          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
+            Founder and principal engineer at Pin High Media.
+          </p>
+          <div class="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-forest-700 transition-colors group-hover:text-forest-900">
+            View profile
+            <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">↗</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-12 rounded-2xl border border-forest-100 bg-cream-deep/40 p-8 sm:p-10">
+        <div class="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-500">
+          Looking for a product?
+        </div>
+        <p class="mt-3 max-w-xl text-[16px] leading-relaxed text-ink-muted">
+          If you're looking for information on one of our products, visit the product sites directly:
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="https://countyconsent.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-lg border border-forest-200 bg-white px-4 py-2.5 text-[14px] font-semibold text-forest-700 transition-colors hover:border-forest-500 hover:text-forest-900"
+          >
+            CountyConsent
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://clubsentinel.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-lg border border-forest-200 bg-white px-4 py-2.5 text-[14px] font-semibold text-forest-700 transition-colors hover:border-forest-500 hover:text-forest-900"
+          >
+            ClubSentinel
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

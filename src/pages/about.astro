@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const title = 'About — Pin High Media'
+const description =
+  'Pin High Media is a specialist software studio for the UK golf industry, building tools designed around how clubs, county unions, and tour organisers actually work.'
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section>
+    <div class="mx-auto max-w-4xl px-6 pt-16 pb-10 sm:px-8 md:pt-24 md:pb-14">
+      <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-forest-500">
+        About Pin High Media
+      </span>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-forest-900 sm:text-5xl md:text-[56px] md:leading-[1.08]">
+        Software built for an industry that deserves better.
+      </h1>
+      <p class="mt-6 text-[18px] leading-relaxed text-ink-muted sm:text-xl">
+        We're Pin High Media — a specialist software studio for the UK golf industry.
+      </p>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section>
+    <div class="mx-auto max-w-3xl px-6 pb-20 sm:px-8 md:pb-28">
+      <div class="space-y-6 text-[17px] leading-[1.75] text-ink">
+        <p>
+          Pin High Media builds tools for golf clubs, county unions, and tour organisers — designed around how clubs actually work, not how a generic software company thinks they do.
+        </p>
+        <p>
+          Most of the software sold to UK golf clubs wasn't built for them. Generic compliance platforms were designed for warehouses. Facilities tools were built for office blocks. Booking systems came from restaurants. Clubs adapt — because they have to — but they deserve better.
+        </p>
+        <p class="border-l-2 border-brass pl-6 text-[20px] font-medium leading-snug text-forest-900">
+          So we build better.
+        </p>
+        <p>
+          Founded by Kev Jager, Pin High Media combines deep golf industry knowledge with modern software engineering. We work with clubs and county unions across England, Scotland, Wales, and Ireland, building tools for the things clubs actually spend their time on — safeguarding, health &amp; safety compliance, member communications, competition management, and more.
+        </p>
+        <p>
+          Our two flagship products, <a href="https://countyconsent.co.uk" target="_blank" rel="noopener noreferrer" class="font-medium text-forest-700 underline decoration-forest-200 underline-offset-4 transition-colors hover:decoration-forest-500">CountyConsent</a> and <a href="https://clubsentinel.co.uk" target="_blank" rel="noopener noreferrer" class="font-medium text-forest-700 underline decoration-forest-200 underline-offset-4 transition-colors hover:decoration-forest-500">ClubSentinel</a>, are live with Durham County Golf Union and Wearside Golf Club respectively, with further partners joining through 2026. Alongside the flagships, we build focused tools — league trackers, courtesy systems, F&amp;B booking, integrated websites — for clubs with specific operational needs.
+        </p>
+        <p>
+          If you're tired of software that wasn't built for you, let's talk.
+        </p>
+      </div>
+
+      <div class="mt-14 border-t border-forest-100 pt-10">
+        <a
+          href="/contact"
+          class="group inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-5 py-3 text-[15px] font-semibold text-cream transition-colors hover:bg-forest-900"
+        >
+          Get in touch
+          <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
