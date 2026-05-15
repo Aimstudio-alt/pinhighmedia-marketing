@@ -6,43 +6,26 @@ import ProductMock from '../components/ProductMock.astro'
 const title = 'Pin High Media — Software for UK golf clubs and county unions'
 const description = 'Modern, modular software for UK golf clubs and county unions — CountyConsent, ClubSentinel, and specialist tools built for how clubs actually work.'
 
-const metrics = [
-  { value: '2',    label: 'Flagship SaaS products, live in production' },
-  { value: '450+', label: 'Junior golfers safeguarded through CountyConsent' },
-  { value: '12',   label: 'UK golf clubs & county unions onboarded' },
-  { value: '0',    label: 'Spreadsheet incidents on our watch' },
-]
-
 const caseStudies = [
   {
-    id: 'dcgu',
-    client: 'Durham County Golf Union',
-    kind: 'County union platform',
-    year: '2025',
-    headline: 'Replaced ten years of paper safeguarding with one signed-link flow.',
-    summary: 'A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season.',
-    stats: [
-      { v: '320+',  k: 'Junior tour consents processed in the first season' },
-      { v: '14',    k: 'Member clubs using the courtesy system' },
-      { v: '< 60s', k: 'Average time from consent request to signed return' },
-    ],
-    products: ['CountyConsent', 'Courtesy System', 'Integrated Website'],
-    photoKind: 'course' as const,
+    id: ‘dcgu’,
+    client: ‘Durham County Golf Union’,
+    kind: ‘County union platform’,
+    year: ‘2025’,
+    headline: ‘A full county platform built around one workflow.’,
+    summary: ‘A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season.’,
+    products: [‘CountyConsent’, ‘Courtesy System’, ‘Integrated Website’],
+    photoKind: ‘course’ as const,
   },
   {
-    id: 'wearside',
-    client: 'Wearside Golf Club',
-    kind: 'Full club platform',
-    year: '2024',
-    headline: "A members’ club, made audit-ready overnight.",
-    summary: 'ClubSentinel rolled out alongside a new website and integrated F&B booking. The club now runs RIDDOR-ready incident reporting, training records, and live compliance scoring from a single dashboard.',
-    stats: [
-      { v: '100%', k: 'Compliance documentation digitised in 6 weeks' },
-      { v: '3',    k: 'Legacy systems retired' },
-      { v: '24/7', k: 'Live compliance score for the club captain' },
-    ],
-    products: ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking'],
-    photoKind: 'indoor' as const,
+    id: ‘wearside’,
+    client: ‘Wearside Golf Club’,
+    kind: ‘Full club platform’,
+    year: ‘2024’,
+    headline: ‘A club website and suite of tools, built from scratch.’,
+    summary: ‘ClubSentinel rolled out alongside a new integrated website. The club now runs RIDDOR-ready incident reporting, training records, and live compliance scoring from a single dashboard.’,
+    products: [‘ClubSentinel’, ‘Integrated Website’],
+    photoKind: ‘indoor’ as const,
   },
 ]
 
@@ -61,7 +44,7 @@ const flagships = [
   {
     name: 'ClubSentinel',
     domain: 'clubsentinel.co.uk',
-    tagline: 'Health & safety compliance and asset management, powered by AI.',
+    tagline: 'Health & safety compliance and asset management.',
     description: 'RIDDOR-ready incident reporting, training records, document management, and a live compliance score — designed to keep your club audit-ready, automatically.',
     bullets: [
       'AI-assisted incident classification',
@@ -75,11 +58,9 @@ const tools = [
   { name: 'Courtesy System',       blurb: 'Automates inter-club courtesy at county level.' },
   { name: 'Golf League Tracker',   blurb: 'Live leaderboards, automatic scoring, no spreadsheets.' },
   { name: 'Golf Genius Connector', blurb: 'Closes the gaps between Golf Genius and your club admin.' },
-  { name: 'Bar & Kitchen Booking', blurb: 'F&B booking integrated into the club ecosystem.' },
   { name: 'Newsletter System',     blurb: 'Member comms inside the platform you already use.' },
   { name: 'Marketing Survey',      blurb: 'Run county-level surveys, get usable data back.' },
   { name: 'Club Websites',         blurb: 'Modern, fully integrated club websites.' },
-  { name: 'Drone Videography',     blurb: 'Course flyovers for marketing and member engagement.' },
 ]
 
 ---
@@ -177,14 +158,6 @@ const tools = [
               <div class="ph-case-client">{c.client}</div>
               <h3 class="ph-case-head">{c.headline}</h3>
               <p class="ph-case-sum">{c.summary}</p>
-              <div class="ph-case-stats">
-                {c.stats.map((s) => (
-                  <div>
-                    <div class="ph-case-stat-v">{s.v}</div>
-                    <div class="ph-case-stat-k">{s.k}</div>
-                  </div>
-                ))}
-              </div>
               <div class="ph-case-products">
                 {c.products.map((prod) => (
                   <span class="ph-chip">{prod}</span>
@@ -192,20 +165,6 @@ const tools = [
               </div>
             </div>
           </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Metrics ── -->
-  <section class="ph-metrics">
-    <div class="ph-container">
-      <div class="ph-metrics-grid">
-        {metrics.map((m) => (
-          <div class="ph-metric">
-            <div class="ph-metric-v">{m.value}</div>
-            <div class="ph-metric-k">{m.label}</div>
-          </div>
         ))}
       </div>
     </div>
