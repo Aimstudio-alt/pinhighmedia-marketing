@@ -3,15 +3,9 @@ import Layout from '../../layouts/Layout.astro'
 import PhotoPlaceholder from '../../components/PhotoPlaceholder.astro'
 
 const title = 'Wearside Golf Club — Pin High Media'
-const description = 'How Pin High made Wearside Golf Club audit-ready overnight — ClubSentinel, a new website, and F&B booking rolled out in 6 weeks.'
+const description = 'How Pin High built Wearside Golf Club a new website and a full suite of bespoke tools — course status, halfway house ordering, table booking, and open competition scoring.'
 
-const stats = [
-  { v: '100%', k: 'Compliance documentation digitised in 6 weeks' },
-  { v: '3',    k: 'Legacy systems retired' },
-  { v: '24/7', k: 'Live compliance score for the club captain' },
-]
-
-const products = ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking']
+const products = ['ClubSentinel', 'Integrated Website']
 ---
 
 <Layout title={title} description={description}>
@@ -21,7 +15,7 @@ const products = ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking']
       <div class="ph-back"><a href="/case-studies">← All case studies</a></div>
       <h1 class="ph-page-h1">Wearside Golf Club</h1>
       <p class="ph-page-lede">
-        A members' club, made audit-ready overnight.
+        A club website and suite of tools, built from scratch.
       </p>
     </div>
   </section>
@@ -37,35 +31,29 @@ const products = ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking']
   <section class="ph-case-detail-body">
     <div class="ph-container ph-case-detail-grid">
       <div>
-        <h2 class="ph-case-detail-h">The problem</h2>
         <p>
-          Wearside Golf Club had no system for health &amp; safety compliance. Incidents were logged in a spreadsheet (sometimes). Training records existed across multiple files. Asset tracking was non-existent. A routine audit would have been a nightmare. The club captain had no way to know, at any given moment, whether the club was actually compliant.
+          Like most golf clubs, Wearside's digital setup was built around administration software — competition management, bar systems, membership records. The website was an afterthought. Bundled in with a legacy platform, unsupported, and lacking the kind of features members at any modern organisation would take for granted. No video. No proper hero. No dynamic content.
+        </p>
+        <p>
+          Replacing it wasn't just a case of building a new site. The legacy system handled things like course status updates automatically — so before I could switch anything over, I needed to build the tools to replace that functionality first.
+        </p>
+        <p>
+          So that's what I did.
+        </p>
+        <p>
+          The course status tool lets the greenkeeper update conditions directly — no technical knowledge needed. An admin tool handles open competition scores. The halfway house ordering system lets members scan a QR code on the eighth tee and place their food order for collection — ready and waiting by the time they walk in. And a table booking system for the bar and kitchen links directly into a single booking admin, giving staff a complete view of both halfway house orders and table reservations in one place.
+        </p>
+        <p>
+          These aren't features you'd expect at Wearside. These are features you'd expect at a multi-million pound club, if you'd expect them anywhere at all.
+        </p>
+        <p>
+          Wearside now has them.
         </p>
 
-        <h2 class="ph-case-detail-h">The system we built</h2>
         <ul class="ph-case-detail-list">
           {products.map((p) => <li>{p}</li>)}
         </ul>
-
-        <h2 class="ph-case-detail-h">How it works now</h2>
-        <p>
-          ClubSentinel gives Wearside's captain a live compliance score, updated in real time as incidents are logged, training is completed, and documents are reviewed. RIDDOR-ready incident reporting means the club is always prepared — not scrambling after the fact. The integrated website replaced three separate systems, and F&B booking brought the bar and function room bookings into the same platform the club already uses for everything else.
-        </p>
-        <p>
-          Three legacy systems were retired in the first six weeks. The club went from zero visibility to a 24/7 compliance dashboard.
-        </p>
       </div>
-
-      <aside class="ph-case-detail-side">
-        <div class="ph-case-detail-stats">
-          {stats.map((s) => (
-            <div>
-              <div class="ph-metric-v">{s.v}</div>
-              <div class="ph-metric-k">{s.k}</div>
-            </div>
-          ))}
-        </div>
-      </aside>
     </div>
   </section>
 

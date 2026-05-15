@@ -3,15 +3,9 @@ import Layout from '../../layouts/Layout.astro'
 import PhotoPlaceholder from '../../components/PhotoPlaceholder.astro'
 
 const title = 'Durham County Golf Union — Pin High Media'
-const description = 'How Pin High replaced ten years of paper safeguarding at Durham County Golf Union with one signed-link flow — 320+ consents in the first season.'
+const description = 'How Pin High rebuilt the Durham County Golf Union website from the ground up — a custom GolfGenius connector, live competition data, and Google Spreadsheets-driven dynamic content.'
 
-const stats = [
-  { v: '320+',  k: 'Junior tour consents processed in the first season' },
-  { v: '14',    k: 'Member clubs using the courtesy system' },
-  { v: '< 60s', k: 'Average time from consent request to signed return' },
-]
-
-const products = ['CountyConsent', 'Courtesy System', 'Integrated Website']
+const products = ['GolfGenius Connector', 'Integrated Website']
 ---
 
 <Layout title={title} description={description}>
@@ -21,7 +15,7 @@ const products = ['CountyConsent', 'Courtesy System', 'Integrated Website']
       <div class="ph-back"><a href="/case-studies">← All case studies</a></div>
       <h1 class="ph-page-h1">Durham County Golf Union</h1>
       <p class="ph-page-lede">
-        Replaced ten years of paper safeguarding with one signed-link flow.
+        A county website rebuilt from the ground up.
       </p>
     </div>
   </section>
@@ -37,32 +31,32 @@ const products = ['CountyConsent', 'Courtesy System', 'Integrated Website']
   <section class="ph-case-detail-body">
     <div class="ph-container ph-case-detail-grid">
       <div>
-        <h2 class="ph-case-detail-h">The problem</h2>
         <p>
-          A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season. Durham CGU ran junior tour safeguarding on paper forms, WhatsApp chains, and shared spreadsheets. Consent forms were chased manually, filed in folders, and impossible to audit. The county secretary spent weeks every season on admin that should have taken hours.
+          Durham County had invested in a WordPress site — customised by an external company who also built a plugin connecting directly to GolfGenius, pulling in live competition results and upcoming events. For most county organisations, that single integration is reason enough never to move.
+        </p>
+        <p>
+          The problem was the company had stopped updating the site. Years passed. The world moved on. The site didn't.
+        </p>
+        <p>
+          I looked at the GolfGenius plugin and saw a straightforward API connection. So I built a better version of it.
+        </p>
+        <p>
+          The GolfGenius connector I built does everything the original plugin did — and more. Live scoring for county competitions displays directly on the homepage. Upcoming events pull through automatically. No manual updates, no copy and pasting results.
+        </p>
+        <p>
+          The bigger problem with the old site was WordPress data tables — cumbersome to manage, slow to update, and a constant source of friction for the team. We got rid of them entirely.
+        </p>
+        <p>
+          The new site is built on HTML and PHP. Dynamic content throughout connects directly to Google Spreadsheets — the county team update a row in a spreadsheet and the website reflects it immediately. No WordPress admin, no data tables, no technical knowledge needed. Just a spreadsheet.
+        </p>
+        <p>
+          The result is a fast, modern website that the county can actually maintain themselves — with live competition data, dynamic content, and none of the WordPress baggage.
         </p>
 
-        <h2 class="ph-case-detail-h">The system we built</h2>
         <ul class="ph-case-detail-list">
           {products.map((p) => <li>{p}</li>)}
         </ul>
-
-        <h2 class="ph-case-detail-h">How it works now</h2>
-        <p>
-          Tour organisers create an event in CountyConsent, which generates unique signed links for each junior entrant's parent or guardian. Consents arrive digitally, are auto-archived, and the county secretary gets a real-time view of who's compliant and who isn't — from any device. The Courtesy System sits alongside it, managing inter-club arrangements for the county's 14 member clubs with no manual coordination required.
-        </p>
       </div>
-
-      <aside class="ph-case-detail-side">
-        <div class="ph-case-detail-stats">
-          {stats.map((s) => (
-            <div>
-              <div class="ph-metric-v">{s.v}</div>
-              <div class="ph-metric-k">{s.k}</div>
-            </div>
-          ))}
-        </div>
-      </aside>
     </div>
   </section>
 

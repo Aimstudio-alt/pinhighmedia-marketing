@@ -9,32 +9,22 @@ const caseStudies = [
   {
     id: 'dcgu',
     client: 'Durham County Golf Union',
-    kind: 'County union platform',
+    kind: 'County website',
     year: '2025',
-    headline: 'Replaced ten years of paper safeguarding with one signed-link flow.',
-    summary: 'A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season.',
-    stats: [
-      { v: '320+',  k: 'Junior tour consents processed in the first season' },
-      { v: '14',    k: 'Member clubs using the courtesy system' },
-      { v: '< 60s', k: 'Average time from consent request to signed return' },
-    ],
-    products: ['CountyConsent', 'Courtesy System', 'Integrated Website'],
-    photoKind: 'course' as const,
+    headline: 'A county website rebuilt from the ground up.',
+    summary: 'A new website with a custom GolfGenius connector and Google Spreadsheets-driven dynamic content — replacing a stagnant WordPress site the county could no longer maintain.',
+    products: ['GolfGenius Connector', 'Integrated Website'],
+    photoKind: 'course',
   },
   {
     id: 'wearside',
     client: 'Wearside Golf Club',
     kind: 'Full club platform',
     year: '2024',
-    headline: "A members’ club, made audit-ready overnight.",
-    summary: 'ClubSentinel rolled out alongside a new website and integrated F&B booking. The club now runs RIDDOR-ready incident reporting, training records, and live compliance scoring from a single dashboard.',
-    stats: [
-      { v: '100%', k: 'Compliance documentation digitised in 6 weeks' },
-      { v: '3',    k: 'Legacy systems retired' },
-      { v: '24/7', k: 'Live compliance score for the club captain' },
-    ],
-    products: ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking'],
-    photoKind: 'indoor' as const,
+    headline: 'A club website and suite of tools, built from scratch.',
+    summary: 'A new club website alongside a suite of bespoke tools: course status, halfway house ordering, table booking, and open competition scoring — all built from the ground up.',
+    products: ['ClubSentinel', 'Integrated Website'],
+    photoKind: 'indoor',
   },
 ]
 ---
@@ -67,14 +57,6 @@ const caseStudies = [
               <div class="ph-case-client">{c.client}</div>
               <h2 class="ph-case-head">{c.headline}</h2>
               <p class="ph-case-sum">{c.summary}</p>
-              <div class="ph-case-stats">
-                {c.stats.map((s) => (
-                  <div>
-                    <div class="ph-case-stat-v">{s.v}</div>
-                    <div class="ph-case-stat-k">{s.k}</div>
-                  </div>
-                ))}
-              </div>
               <div class="ph-case-products">
                 {c.products.map((prod) => (
                   <span class="ph-chip">{prod}</span>
