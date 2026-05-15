@@ -1,0 +1,66 @@
+---
+interface Props {
+  product: 'CountyConsent' | 'ClubSentinel'
+}
+const { product } = Astro.props
+const isConsent = product === 'CountyConsent'
+
+const consentRows = [
+  { n: 'A. Patel',     s: 'Signed',  c: 'ok' },
+  { n: 'J. Robinson',  s: 'Signed',  c: 'ok' },
+  { n: 'M. Henderson', s: 'Pending', c: 'warn' },
+  { n: 'S. Okafor',    s: 'Signed',  c: 'ok' },
+  { n: 'R. Singh',     s: 'Signed',  c: 'ok' },
+]
+
+const sentinelTiles = [
+  { k: 'Incidents (90d)', v: '0' },
+  { k: 'Training due',    v: '3' },
+  { k: 'Assets',          v: '128' },
+  { k: 'Docs current',    v: '100%' },
+]
+---
+
+<div class="ph-mock">
+  <div class="ph-mock-chrome">
+    <span class="ph-mock-dot"></span>
+    <span class="ph-mock-dot"></span>
+    <span class="ph-mock-dot"></span>
+    <span class="ph-mock-url">
+      {isConsent ? 'countyconsent.co.uk/tours/junior-spring' : 'clubsentinel.co.uk/dashboard'}
+    </span>
+  </div>
+  <div class="ph-mock-body">
+    {isConsent ? (
+      <>
+        <div class="ph-mock-h">Junior Spring Tour 2026</div>
+        <div class="ph-mock-sub">14 entrants · 12 consents received · 2 pending</div>
+        <div class="ph-mock-list">
+          {consentRows.map((row) => (
+            <div class="ph-mock-row">
+              <span class="ph-mock-name">{row.n}</span>
+              <span class={`ph-mock-tag ph-mock-tag-${row.c}`}>{row.s}</span>
+            </div>
+          ))}
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="ph-mock-h">Wearside Golf Club — Compliance</div>
+        <div class="ph-mock-score">
+          <div class="ph-mock-score-num">94</div>
+          <div class="ph-mock-score-label">Compliance score · this month</div>
+          <div class="ph-mock-bar"><span class="ph-mock-bar-fill" style="width:94%"></span></div>
+        </div>
+        <div class="ph-mock-grid">
+          {sentinelTiles.map((tile) => (
+            <div class="ph-mock-tile">
+              <div class="ph-mock-tile-k">{tile.k}</div>
+              <div class="ph-mock-tile-v">{tile.v}</div>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</div>

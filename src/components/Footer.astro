@@ -1,84 +1,62 @@
 ---
 const year = new Date().getFullYear()
+
+const columns = [
+  {
+    heading: 'Products',
+    links: [
+      { label: 'CountyConsent', href: 'https://countyconsent.co.uk' },
+      { label: 'ClubSentinel',  href: 'https://clubsentinel.co.uk' },
+      { label: 'All products',  href: '/products' },
+    ],
+  },
+  {
+    heading: 'Studio',
+    links: [
+      { label: 'About',        href: '/about' },
+      { label: 'Case studies', href: '/case-studies' },
+      { label: 'Contact',      href: '/contact' },
+    ],
+  },
+  {
+    heading: 'Elsewhere',
+    links: [
+      { label: 'LinkedIn',  href: '#' },
+      { label: 'Email us',  href: 'mailto:hello@pinhighmedia.co.uk' },
+    ],
+  },
+]
 ---
 
-<footer class="mt-24 bg-forest-900 text-forest-100">
-  <div class="mx-auto max-w-6xl px-6 py-16 sm:px-8">
-    <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+<footer class="ph-footer">
+  <div class="ph-container">
+    <div class="ph-footer-top">
       <div>
-        <div class="flex items-center gap-2.5">
-          <span aria-hidden="true" class="grid h-8 w-8 place-items-center rounded-md bg-cream text-forest-900">
-            <span class="text-sm font-bold tracking-tight">P</span>
-          </span>
-          <span class="text-[15px] font-semibold tracking-tight text-cream">
-            Pin High Media
-          </span>
-        </div>
-        <p class="mt-5 max-w-sm text-[14px] leading-relaxed text-forest-100/70">
-          A specialist software studio building purpose-built tools for UK golf
-          clubs, county unions, and tour organisers.
-        </p>
+        <a href="/" class="ph-logo">
+          <span>pinhigh</span>
+          <span class="ph-logo-dot" aria-hidden="true"></span>
+        </a>
+        <p class="ph-footer-tag">Specialist software for UK golf clubs &amp; county unions.</p>
       </div>
 
-      <div>
-        <h3 class="text-[12px] font-semibold uppercase tracking-widest text-brass-light">
-          Products
-        </h3>
-        <ul class="mt-5 space-y-3 text-[14px]">
-          <li>
-            <a
-              href="https://countyconsent.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-forest-100/90 transition-colors hover:text-cream"
-            >
-              CountyConsent <span aria-hidden="true" class="text-forest-100/50">↗</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://clubsentinel.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-forest-100/90 transition-colors hover:text-cream"
-            >
-              ClubSentinel <span aria-hidden="true" class="text-forest-100/50">↗</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-[12px] font-semibold uppercase tracking-widest text-brass-light">
-          Get in touch
-        </h3>
-        <ul class="mt-5 space-y-3 text-[14px]">
-          <li>
-            <a
-              href="mailto:hello@pinhighmedia.co.uk"
-              class="text-forest-100/90 transition-colors hover:text-cream"
-            >
-              hello@pinhighmedia.co.uk
-            </a>
-          </li>
-          <li>
-            {/* TODO: replace # with real LinkedIn URL */}
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-forest-100/90 transition-colors hover:text-cream"
-            >
-              LinkedIn <span aria-hidden="true" class="text-forest-100/50">↗</span>
-            </a>
-          </li>
-        </ul>
+      <div class="ph-footer-cols">
+        {columns.map((col) => (
+          <div class="ph-footer-col">
+            <div class="ph-footer-h">{col.heading}</div>
+            {col.links.map((l) => (
+              <a href={l.href} class="ph-footer-link">{l.label}</a>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
 
-    <div class="mt-14 flex flex-col gap-3 border-t border-forest-700/60 pt-8 text-[13px] text-forest-100/60 sm:flex-row sm:items-center sm:justify-between">
-      <p>© {year} Pin High Media. All rights reserved.</p>
-      <p>Built in the North East of England.</p>
+    <div class="ph-footer-bot">
+      <span>© {year} Pin High Media Ltd · Built in Durham, UK</span>
+      <span class="ph-footer-status">
+        <span class="ph-pulse" aria-hidden="true"></span>
+        All systems operational
+      </span>
     </div>
   </div>
 </footer>

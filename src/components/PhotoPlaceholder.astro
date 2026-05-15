@@ -1,0 +1,31 @@
+---
+interface Props {
+  kind?: 'course' | 'indoor' | 'aerial' | 'portrait'
+  ratio?: string
+  label?: string
+}
+
+const { kind = 'course', ratio = '16/10', label } = Astro.props
+
+const presets = {
+  course:   { sky: '#e7ece3', grass: '#cbd9c2', hill: '#a4b994' },
+  indoor:   { sky: '#f0eee7', grass: '#dad6c8', hill: '#bbb3a0' },
+  aerial:   { sky: '#dee5d8', grass: '#9fb495', hill: '#6f8a70' },
+  portrait: { sky: '#eee9df', grass: '#d9d3c4', hill: '#aaa18d' },
+}
+const p = presets[kind]
+---
+
+<div class="ph-photo" style={`aspect-ratio: ${ratio};`}>
+  <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice">
+    <rect width="640" height="400" fill={p.sky} />
+    <path d="M0 220 C 80 200, 160 230, 240 215 S 400 200, 480 220 S 600 200, 640 215 L 640 400 L 0 400 Z" fill={p.hill} opacity="0.7"/>
+    <path d="M0 270 C 60 260, 140 285, 220 270 S 380 260, 460 280 S 600 265, 640 275 L 640 400 L 0 400 Z" fill={p.hill}/>
+    <path d="M0 320 C 80 310, 200 335, 320 320 S 540 305, 640 320 L 640 400 L 0 400 Z" fill={p.grass}/>
+    <line x1="380" y1="240" x2="380" y2="315" stroke="#3a3a3a" stroke-width="1.5"/>
+    <path d="M380 240 L 408 250 L 380 260 Z" fill="var(--accent)"/>
+    <circle cx="120" cy="325" r="3" fill="#3a3a3a" opacity="0.5"/>
+    <circle cx="125" cy="328" r="2" fill="#3a3a3a" opacity="0.3"/>
+  </svg>
+  {label && <span class="ph-photo-label">{label}</span>}
+</div>

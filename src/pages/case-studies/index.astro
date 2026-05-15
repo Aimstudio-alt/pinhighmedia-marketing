@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PhotoPlaceholder from '../../components/PhotoPlaceholder.astro'
+
+const title = 'Case studies — Pin High Media'
+const description = 'Two full bespoke platforms currently live — Durham County Golf Union and Wearside Golf Club. Both started with one painful workflow and ended with full operations on Pin High.'
+
+const caseStudies = [
+  {
+    id: 'dcgu',
+    client: 'Durham County Golf Union',
+    kind: 'County union platform',
+    year: '2025',
+    headline: 'Replaced ten years of paper safeguarding with one signed-link flow.',
+    summary: 'A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season.',
+    stats: [
+      { v: '320+',  k: 'Junior tour consents processed in the first season' },
+      { v: '14',    k: 'Member clubs using the courtesy system' },
+      { v: '< 60s', k: 'Average time from consent request to signed return' },
+    ],
+    products: ['CountyConsent', 'Courtesy System', 'Integrated Website'],
+    photoKind: 'course' as const,
+  },
+  {
+    id: 'wearside',
+    client: 'Wearside Golf Club',
+    kind: 'Full club platform',
+    year: '2024',
+    headline: "A members’ club, made audit-ready overnight.",
+    summary: 'ClubSentinel rolled out alongside a new website and integrated F&B booking. The club now runs RIDDOR-ready incident reporting, training records, and live compliance scoring from a single dashboard.',
+    stats: [
+      { v: '100%', k: 'Compliance documentation digitised in 6 weeks' },
+      { v: '3',    k: 'Legacy systems retired' },
+      { v: '24/7', k: 'Live compliance score for the club captain' },
+    ],
+    products: ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking'],
+    photoKind: 'indoor' as const,
+  },
+]
+---
+
+<Layout title={title} description={description}>
+
+  <section class="ph-page-head">
+    <div class="ph-container">
+      <span class="ph-eyebrow">Case studies</span>
+      <h1 class="ph-page-h1">In production with real clubs.</h1>
+      <p class="ph-page-lede">
+        We build full bespoke platforms combining Pin High modules into one integrated system for a single club or county.
+      </p>
+    </div>
+  </section>
+
+  <section class="ph-case-section" style="padding-top: 0;">
+    <div class="ph-container">
+      <div class="ph-case-list">
+        {caseStudies.map((c) => (
+          <a href={`/case-studies/${c.id}`} class="ph-case-card">
+            <div class="ph-case-art">
+              <PhotoPlaceholder kind={c.photoKind} ratio="16/10" />
+              <div class="ph-case-overlay">
+                <span>{c.kind}</span>
+                <span>·</span>
+                <span>{c.year}</span>
+              </div>
+            </div>
+            <div class="ph-case-body">
+              <div class="ph-case-client">{c.client}</div>
+              <h2 class="ph-case-head">{c.headline}</h2>
+              <p class="ph-case-sum">{c.summary}</p>
+              <div class="ph-case-stats">
+                {c.stats.map((s) => (
+                  <div>
+                    <div class="ph-case-stat-v">{s.v}</div>
+                    <div class="ph-case-stat-k">{s.k}</div>
+                  </div>
+                ))}
+              </div>
+              <div class="ph-case-products">
+                {c.products.map((prod) => (
+                  <span class="ph-chip">{prod}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ph-closing">
+    <div class="ph-closing-inner">
+      <h2 class="ph-closing-h">Software that understands golf.</h2>
+      <p class="ph-closing-p">Tell us what your club, county, or tour is wrestling with — we probably know the problem already.</p>
+      <div class="ph-hero-ctas ph-closing-ctas">
+        <a href="/contact" class="ph-btn ph-btn-primary">
+          Get in touch
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

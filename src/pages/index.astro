@@ -1,228 +1,307 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import FlagshipCard from '../components/FlagshipCard.astro'
-import PlaceholderImage from '../components/PlaceholderImage.astro'
+import PhotoPlaceholder from '../components/PhotoPlaceholder.astro'
+import ProductMock from '../components/ProductMock.astro'
 
 const title = 'Pin High Media — Software for UK golf clubs and county unions'
-const description =
-  "We build modern, modular tools for UK golf clubs and county unions — purpose-built websites, member-facing booking, and bespoke admin tools that add what bundled legacy systems do badly."
+const description = 'Modern, modular software for UK golf clubs and county unions — CountyConsent, ClubSentinel, and specialist tools built for how clubs actually work.'
+
+const metrics = [
+  { value: '2',    label: 'Flagship SaaS products, live in production' },
+  { value: '450+', label: 'Junior golfers safeguarded through CountyConsent' },
+  { value: '12',   label: 'UK golf clubs & county unions onboarded' },
+  { value: '0',    label: 'Spreadsheet incidents on our watch' },
+]
+
+const caseStudies = [
+  {
+    id: 'dcgu',
+    client: 'Durham County Golf Union',
+    kind: 'County union platform',
+    year: '2025',
+    headline: 'Replaced ten years of paper safeguarding with one signed-link flow.',
+    summary: 'A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season.',
+    stats: [
+      { v: '320+',  k: 'Junior tour consents processed in the first season' },
+      { v: '14',    k: 'Member clubs using the courtesy system' },
+      { v: '< 60s', k: 'Average time from consent request to signed return' },
+    ],
+    products: ['CountyConsent', 'Courtesy System', 'Integrated Website'],
+    photoKind: 'course' as const,
+  },
+  {
+    id: 'wearside',
+    client: 'Wearside Golf Club',
+    kind: 'Full club platform',
+    year: '2024',
+    headline: "A members’ club, made audit-ready overnight.",
+    summary: 'ClubSentinel rolled out alongside a new website and integrated F&B booking. The club now runs RIDDOR-ready incident reporting, training records, and live compliance scoring from a single dashboard.',
+    stats: [
+      { v: '100%', k: 'Compliance documentation digitised in 6 weeks' },
+      { v: '3',    k: 'Legacy systems retired' },
+      { v: '24/7', k: 'Live compliance score for the club captain' },
+    ],
+    products: ['ClubSentinel', 'Integrated Website', 'Bar & Kitchen Booking'],
+    photoKind: 'indoor' as const,
+  },
+]
+
+const flagships = [
+  {
+    name: 'CountyConsent',
+    domain: 'countyconsent.co.uk',
+    tagline: 'Junior golf parental consent and safeguarding, properly digital.',
+    description: 'Replace paper forms, WhatsApp chains, and shared spreadsheets with one secure, GDPR-compliant system for clubs, counties, and tour organisers.',
+    bullets: [
+      'GDPR-compliant signed consent flow',
+      'Per-event, per-season, or per-tour consents',
+      'Auto-archive for safeguarding audits',
+    ],
+  },
+  {
+    name: 'ClubSentinel',
+    domain: 'clubsentinel.co.uk',
+    tagline: 'Health & safety compliance and asset management, powered by AI.',
+    description: 'RIDDOR-ready incident reporting, training records, document management, and a live compliance score — designed to keep your club audit-ready, automatically.',
+    bullets: [
+      'AI-assisted incident classification',
+      'Asset register with service reminders',
+      'Live compliance score for the captain',
+    ],
+  },
+]
+
+const tools = [
+  { name: 'Courtesy System',       blurb: 'Automates inter-club courtesy at county level.' },
+  { name: 'Golf League Tracker',   blurb: 'Live leaderboards, automatic scoring, no spreadsheets.' },
+  { name: 'Golf Genius Connector', blurb: 'Closes the gaps between Golf Genius and your club admin.' },
+  { name: 'Bar & Kitchen Booking', blurb: 'F&B booking integrated into the club ecosystem.' },
+  { name: 'Newsletter System',     blurb: 'Member comms inside the platform you already use.' },
+  { name: 'Marketing Survey',      blurb: 'Run county-level surveys, get usable data back.' },
+  { name: 'Club Websites',         blurb: 'Modern, fully integrated club websites.' },
+  { name: 'Drone Videography',     blurb: 'Course flyovers for marketing and member engagement.' },
+]
+
+const clients = ['Durham CGU', 'Wearside GC', 'Cleveland GU', 'Beamish Park', 'Brancepeth Castle', 'Seaham GC', 'Boldon GC']
 ---
 
 <Layout title={title} description={description}>
 
-  <!-- ── Hero (cream) ── -->
-  <section class="relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:px-8 md:pt-24 md:pb-28">
-      <div class="grid items-center gap-12 md:grid-cols-12">
-        <div class="md:col-span-7">
-          <span class="inline-flex items-center gap-2 rounded-full border border-forest-200 bg-white/60 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.14em] text-forest-700">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-brass" aria-hidden="true"></span>
-            A specialist software studio for UK golf
-          </span>
-          <h1 class="mt-6 text-4xl font-bold tracking-tight text-forest-900 sm:text-5xl md:text-6xl md:leading-[1.05]">
-            Software built for how UK golf
-            <span class="text-forest-500"> actually works.</span>
-          </h1>
-          <p class="mt-6 max-w-2xl text-[17px] leading-relaxed text-ink-muted sm:text-lg">
-            We build modern, modular tools for UK golf clubs and county unions — designed to add what bundled legacy systems do badly: purpose-built websites, member-facing booking, and bespoke admin tools. Keep what works. Replace what doesn't.
-          </p>
-          <div class="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="/products"
-              class="group inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-5 py-3 text-[15px] font-semibold text-cream transition-colors hover:bg-forest-900"
-            >
-              See what we build
-              <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-            </a>
-            <a
-              href="/contact"
-              class="inline-flex items-center gap-1.5 rounded-lg border border-forest-200 bg-white px-5 py-3 text-[15px] font-semibold text-forest-700 transition-colors hover:border-forest-500 hover:text-forest-900"
-            >
-              Get in touch
-            </a>
+  <!-- ── Hero ── -->
+  <section class="ph-hero">
+    <div class="ph-container ph-hero-grid">
+      <div>
+        <span class="ph-eyebrow">
+          <span class="ph-eyebrow-dot" aria-hidden="true"></span>
+          A specialist software studio for UK golf
+        </span>
+        <h1 class="ph-h1">
+          Software built for how UK golf
+          <em> actually works.</em>
+        </h1>
+        <p class="ph-lede">
+          Modern, modular tools for clubs and county unions — purpose-built to add what bundled legacy systems do badly. Keep what works. Replace what doesn't.
+        </p>
+        <div class="ph-hero-ctas">
+          <a href="/products" class="ph-btn ph-btn-primary">
+            See what we build
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+          </a>
+          <a href="/contact" class="ph-btn ph-btn-ghost">
+            Talk to us
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+          </a>
+        </div>
+        <div class="ph-hero-quiet">
+          <span>Live with</span>
+          <strong>Durham County Golf Union</strong>
+          <span>·</span>
+          <strong>Wearside Golf Club</strong>
+          <span>+ 10 more</span>
+        </div>
+      </div>
+
+      <!-- Stack visual -->
+      <div class="ph-stack" aria-hidden="true">
+        <div class="ph-stack-card ph-stack-pinhigh">
+          <div class="ph-stack-meta">
+            <span class="ph-logo" style="font-size:14px">
+              <span>pinhigh</span>
+              <span class="ph-logo-dot"></span>
+            </span>
+            <span class="ph-stack-tag">Your operating layer</span>
+          </div>
+          <div class="ph-stack-rows">
+            <div class="ph-stack-row"><span>CountyConsent</span><span class="ph-stack-pill">live</span></div>
+            <div class="ph-stack-row"><span>ClubSentinel</span><span class="ph-stack-pill">live</span></div>
+            <div class="ph-stack-row"><span>Courtesy System</span><span class="ph-stack-pill">live</span></div>
+            <div class="ph-stack-row"><span>League Tracker</span><span class="ph-stack-pill">live</span></div>
           </div>
         </div>
+        <div class="ph-stack-card ph-stack-legacy ph-stack-legacy-1">
+          <div class="ph-stack-meta ph-stack-meta-faded">
+            <span>Legacy CRM</span><span>Bundled, generic</span>
+          </div>
+        </div>
+        <div class="ph-stack-card ph-stack-legacy ph-stack-legacy-2">
+          <div class="ph-stack-meta ph-stack-meta-faded">
+            <span>Tee Booking</span><span>Built for restaurants</span>
+          </div>
+        </div>
+        <div class="ph-stack-card ph-stack-legacy ph-stack-legacy-3">
+          <div class="ph-stack-meta ph-stack-meta-faded">
+            <span>Compliance Tool</span><span>Designed for warehouses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Hero product screenshot -->
-        <div class="md:col-span-5">
-          <div class="relative">
-            <div class="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-forest-100 to-brass/20 opacity-60 blur-2xl" aria-hidden="true"></div>
-            <div class="overflow-hidden rounded-xl bg-white ring-1 ring-forest-900/10 shadow-[0_30px_60px_-20px_rgba(14,31,16,0.3)]">
-              <img
-                src="/preview-countyconsent.png"
-                alt="CountyConsent product preview"
-                width="1200"
-                height="630"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                class="block w-full"
-              />
+  <!-- ── Client strip ── -->
+  <div class="ph-strip">
+    <div class="ph-strip-inner">
+      <span class="ph-strip-label">Trusted by</span>
+      <div class="ph-strip-list">
+        {clients.map((c) => <span class="ph-strip-item">{c}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Case studies ── -->
+  <section class="ph-case-section">
+    <div class="ph-container">
+      <div class="ph-section-head">
+        <span class="ph-eyebrow">Case studies</span>
+        <h2 class="ph-section-title">When a club needs everything working together.</h2>
+        <p class="ph-section-lede">
+          Two full bespoke platforms currently live. Both started with one painful workflow — both ended with the club's entire operations on Pin High.
+        </p>
+      </div>
+
+      <div class="ph-case-list">
+        {caseStudies.map((c) => (
+          <a href={`/case-studies/${c.id}`} class="ph-case-card">
+            <div class="ph-case-art">
+              <PhotoPlaceholder kind={c.photoKind} ratio="16/10" />
+              <div class="ph-case-overlay">
+                <span>{c.kind}</span>
+                <span>·</span>
+                <span>{c.year}</span>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="ph-case-body">
+              <div class="ph-case-client">{c.client}</div>
+              <h3 class="ph-case-head">{c.headline}</h3>
+              <p class="ph-case-sum">{c.summary}</p>
+              <div class="ph-case-stats">
+                {c.stats.map((s) => (
+                  <div>
+                    <div class="ph-case-stat-v">{s.v}</div>
+                    <div class="ph-case-stat-k">{s.k}</div>
+                  </div>
+                ))}
+              </div>
+              <div class="ph-case-products">
+                {c.products.map((prod) => (
+                  <span class="ph-chip">{prod}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ── Flagship SaaS products (dark) ── -->
-  <section class="bg-forest-900">
-    <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight text-cream sm:text-4xl">
-          Flagship SaaS products
-        </h2>
-        <p class="mt-4 text-[16px] leading-relaxed text-forest-100/70">
-          Two products, live with real UK customers.
+  <!-- ── Metrics ── -->
+  <section class="ph-metrics">
+    <div class="ph-container">
+      <div class="ph-metrics-grid">
+        {metrics.map((m) => (
+          <div class="ph-metric">
+            <div class="ph-metric-v">{m.value}</div>
+            <div class="ph-metric-k">{m.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Flagship products ── -->
+  <section class="ph-flagships">
+    <div class="ph-container">
+      <div class="ph-section-head">
+        <span class="ph-eyebrow">Flagship products</span>
+        <h2 class="ph-section-title">Two SaaS products, live with real UK customers.</h2>
+      </div>
+
+      <div class="ph-flagship-grid">
+        {flagships.map((p) => (
+          <article class="ph-flagship">
+            <div class="ph-flagship-head">
+              <div>
+                <h3 class="ph-flagship-name">{p.name}</h3>
+                <div class="ph-flagship-domain">{p.domain}</div>
+              </div>
+              <span class="ph-status-pill">
+                <span class="ph-pulse" aria-hidden="true"></span>
+                Live
+              </span>
+            </div>
+            <p class="ph-flagship-tag">{p.tagline}</p>
+            <p class="ph-flagship-desc">{p.description}</p>
+            <ul class="ph-flagship-bullets">
+              {p.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+            <ProductMock product={p.name as 'CountyConsent' | 'ClubSentinel'} />
+            <a href={`https://${p.domain}`} class="ph-btn ph-btn-ghost" target="_blank" rel="noopener noreferrer">
+              Visit {p.name}
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Specialist tools ── -->
+  <section class="ph-tools">
+    <div class="ph-container">
+      <div class="ph-section-head">
+        <span class="ph-eyebrow">Specialist tools</span>
+        <h2 class="ph-section-title">Focused products that solve one thing properly.</h2>
+        <p class="ph-section-lede">
+          Alongside the flagships, we build smaller tools for specific operational jobs. If one sounds like something you need, get in touch.
         </p>
       </div>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-2">
-        <FlagshipCard
-          name="CountyConsent"
-          tagline="Junior golf parental consent and safeguarding, properly digital."
-          description="Replace paper forms, WhatsApp chains, and shared spreadsheets with one secure, GDPR-compliant system for clubs, counties, and tour organisers."
-          href="https://countyconsent.co.uk"
-          accent="forest"
-          image="/preview-countyconsent.png"
-          imageAlt="CountyConsent product preview"
-        />
-        <FlagshipCard
-          name="ClubSentinel"
-          tagline="Health & safety compliance and asset management for golf clubs, powered by AI."
-          description="RIDDOR-ready incident reporting, training records, document management, and a live compliance score — designed to keep your club audit-ready, automatically."
-          href="https://clubsentinel.co.uk"
-          accent="brass"
-          image="/preview-clubsentinel.png"
-          imageAlt="ClubSentinel product preview"
-        />
+      <div class="ph-tools-grid">
+        {tools.map((t, i) => (
+          <article class="ph-tool">
+            <div class="ph-tool-num">{String(i + 1).padStart(2, '0')}</div>
+            <h4 class="ph-tool-name">{t.name}</h4>
+            <p class="ph-tool-blurb">{t.blurb}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ── Standalone Tools (cream) ── -->
-  <section>
-    <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight text-forest-900 sm:text-4xl">
-          Tools built for specific jobs
-        </h2>
-        <p class="mt-4 text-[16px] leading-relaxed text-ink-muted">
-          Focused products that solve one thing properly.
-        </p>
-      </div>
-
-      <div class="mt-12 grid gap-5 md:grid-cols-3">
-        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
-          <div class="flex items-center gap-2 text-forest-500">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
-            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
-          </div>
-          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
-            Golf League Tracker
-          </h3>
-          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
-            A full league management tool for club winter and summer leagues. Player selection, weekly group draws, live standings, and automatic WHS handicap maths — so captains don't have to.
-          </p>
-        </article>
-
-        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
-          <div class="flex items-center gap-2 text-forest-500">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
-            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
-          </div>
-          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
-            County Golf Courtesy System
-          </h3>
-          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
-            Automates inter-club courtesy arrangements at county level. Saved Durham County Golf Union hundreds of hours of administration.
-          </p>
-        </article>
-
-        <article class="flex h-full flex-col rounded-xl border border-forest-100 bg-white p-7 transition-colors hover:border-forest-200">
-          <div class="flex items-center gap-2 text-forest-500">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
-            <span class="text-[11px] font-semibold uppercase tracking-[0.18em]">Standalone tool</span>
-          </div>
-          <h3 class="mt-4 text-xl font-bold tracking-tight text-forest-900">
-            County Golf Marketing Survey
-          </h3>
-          <p class="mt-3 text-[14px] leading-relaxed text-ink-muted">
-            Data collection and insight tools for county golf bodies. Run surveys, track participation, get the data you need to make informed decisions.
-          </p>
-        </article>
-      </div>
-
-      <div class="mt-10 text-center">
-        <a
-          href="/products"
-          class="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-forest-700 transition-colors hover:text-forest-900"
-        >
-          See the full breakdown on our products page
-          <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Case studies teaser (dark) ── -->
-  <section class="bg-forest-900">
-    <div class="mx-auto max-w-6xl px-6 py-20 sm:px-8 md:py-24">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight text-cream sm:text-4xl">
-          When a club needs everything working together
-        </h2>
-        <p class="mt-4 text-[16px] leading-relaxed text-forest-100/70">
-          We also build full bespoke platforms combining our modules into one integrated system for a single club or county. Two examples currently live:
-        </p>
-      </div>
-
-      <div class="mt-12 grid gap-6 md:grid-cols-2">
-        <a
-          href="/work/wearside"
-          class="group block overflow-hidden rounded-2xl bg-cream ring-1 ring-forest-700/40 transition-all duration-200 hover:-translate-y-1 hover:ring-brass"
-        >
-          <PlaceholderImage description="Wearside Golf Club homepage" />
-          <div class="flex items-center justify-between p-6 sm:p-7">
-            <span class="text-xl font-bold tracking-tight text-forest-900">
-              Wearside Golf Club
-            </span>
-            <span aria-hidden="true" class="text-forest-700 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </div>
-        </a>
-
-        <a
-          href="/work/dcgu"
-          class="group block overflow-hidden rounded-2xl bg-cream ring-1 ring-forest-700/40 transition-all duration-200 hover:-translate-y-1 hover:ring-brass"
-        >
-          <PlaceholderImage description="Durham County Golf Union homepage" />
-          <div class="flex items-center justify-between p-6 sm:p-7">
-            <span class="text-xl font-bold tracking-tight text-forest-900">
-              Durham County Golf Union
-            </span>
-            <span aria-hidden="true" class="text-forest-700 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Closing CTA (cream) ── -->
-  <section>
-    <div class="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 md:py-28">
-      <h2 class="text-3xl font-bold tracking-tight text-forest-900 sm:text-[40px]">
-        Software that understands golf.
-      </h2>
-      <p class="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-ink-muted">
+  <!-- ── Closing CTA ── -->
+  <section class="ph-closing">
+    <div class="ph-closing-inner">
+      <h2 class="ph-closing-h">Software that understands golf.</h2>
+      <p class="ph-closing-p">
         Tell us what your club, county, or tour is wrestling with — we probably know the problem already.
       </p>
-      <div class="mt-8">
-        <a
-          href="/contact"
-          class="group inline-flex items-center gap-1.5 rounded-lg bg-forest-700 px-5 py-3 text-[15px] font-semibold text-cream transition-colors hover:bg-forest-900"
-        >
+      <div class="ph-hero-ctas ph-closing-ctas">
+        <a href="/contact" class="ph-btn ph-btn-primary">
           Get in touch
-          <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+        </a>
+        <a href="/products" class="ph-btn ph-btn-ghost">
+          See all products
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
         </a>
       </div>
     </div>

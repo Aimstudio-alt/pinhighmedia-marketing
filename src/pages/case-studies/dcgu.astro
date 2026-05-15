@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PhotoPlaceholder from '../../components/PhotoPlaceholder.astro'
+
+const title = 'Durham County Golf Union — Pin High Media'
+const description = 'How Pin High replaced ten years of paper safeguarding at Durham County Golf Union with one signed-link flow — 320+ consents in the first season.'
+
+const stats = [
+  { v: '320+',  k: 'Junior tour consents processed in the first season' },
+  { v: '14',    k: 'Member clubs using the courtesy system' },
+  { v: '< 60s', k: 'Average time from consent request to signed return' },
+]
+
+const products = ['CountyConsent', 'Courtesy System', 'Integrated Website']
+---
+
+<Layout title={title} description={description}>
+
+  <section class="ph-page-head">
+    <div class="ph-container">
+      <div class="ph-back"><a href="/case-studies">← All case studies</a></div>
+      <span class="ph-eyebrow">County union platform · 2025</span>
+      <h1 class="ph-page-h1">Durham County Golf Union</h1>
+      <p class="ph-page-lede">
+        Replaced ten years of paper safeguarding with one signed-link flow.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ph-container">
+      <div class="ph-case-detail-art">
+        <PhotoPlaceholder kind="aerial" ratio="21/9" />
+      </div>
+    </div>
+  </section>
+
+  <section class="ph-case-detail-body">
+    <div class="ph-container ph-case-detail-grid">
+      <div>
+        <h2 class="ph-case-detail-h">The problem</h2>
+        <p>
+          A bespoke county platform combining CountyConsent, the Courtesy System, and a fully integrated public website — saving hundreds of admin hours every season. Durham CGU ran junior tour safeguarding on paper forms, WhatsApp chains, and shared spreadsheets. Consent forms were chased manually, filed in folders, and impossible to audit. The county secretary spent weeks every season on admin that should have taken hours.
+        </p>
+
+        <h2 class="ph-case-detail-h">The system we built</h2>
+        <ul class="ph-case-detail-list">
+          {products.map((p) => <li>{p}</li>)}
+        </ul>
+
+        <h2 class="ph-case-detail-h">How it works now</h2>
+        <p>
+          Tour organisers create an event in CountyConsent, which generates unique signed links for each junior entrant's parent or guardian. Consents arrive digitally, are auto-archived, and the county secretary gets a real-time view of who's compliant and who isn't — from any device. The Courtesy System sits alongside it, managing inter-club arrangements for the county's 14 member clubs with no manual coordination required.
+        </p>
+      </div>
+
+      <aside class="ph-case-detail-side">
+        <div class="ph-case-detail-stats">
+          {stats.map((s) => (
+            <div>
+              <div class="ph-metric-v">{s.v}</div>
+              <div class="ph-metric-k">{s.k}</div>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="ph-closing">
+    <div class="ph-closing-inner">
+      <h2 class="ph-closing-h">Software that understands golf.</h2>
+      <p class="ph-closing-p">Tell us what your club, county, or tour is wrestling with — we probably know the problem already.</p>
+      <div class="ph-hero-ctas ph-closing-ctas">
+        <a href="/contact" class="ph-btn ph-btn-primary">
+          Get in touch
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+        </a>
+        <a href="/case-studies" class="ph-btn ph-btn-ghost">
+          All case studies
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8m-3-3 3 3-3 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
