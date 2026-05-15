@@ -166,6 +166,7 @@ em { font-style: italic; }
 .ph-section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .ph-section-title {
   font-family: var(--font-display);
+  font-style: normal;
   font-size: clamp(28px, 3.6vw, 44px);
   font-weight: var(--h1-weight);
   letter-spacing: -0.02em;
@@ -187,6 +188,7 @@ em { font-style: italic; }
 }
 .ph-h1 {
   font-family: var(--font-display);
+  font-style: normal;
   font-size: var(--h1-size);
   font-weight: var(--h1-weight);
   letter-spacing: var(--h1-tracking);
@@ -195,7 +197,7 @@ em { font-style: italic; }
   margin-top: 24px;
   text-wrap: balance;
 }
-.ph-h1 em { font-style: italic; color: var(--accent); }
+.ph-h1 em { font-style: normal; color: var(--accent); }
 .ph-lede {
   font-size: 18px; line-height: 1.55;
   color: var(--ink-3);
@@ -577,6 +579,7 @@ em { font-style: italic; }
 }
 .ph-closing-h {
   font-family: var(--font-display);
+  font-style: normal;
   font-size: clamp(32px, 5vw, 56px);
   font-weight: var(--h1-weight);
   letter-spacing: -0.025em; line-height: 1.05; color: var(--bg);
@@ -634,6 +637,7 @@ em { font-style: italic; }
 }
 .ph-page-h1 {
   font-family: var(--font-display);
+  font-style: normal;
   font-size: var(--h1-size);
   font-weight: var(--h1-weight);
   letter-spacing: var(--h1-tracking);
